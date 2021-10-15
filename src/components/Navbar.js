@@ -7,11 +7,10 @@ class Navbar extends React.Component {
 
     render () {
         return (
-            <div class="ui attached stackable menu">
-                <div class="ui container">
-                    <Link class="item" to="/">Home</Link>
-                    <Link class="item" to="/all">All</Link>
-                </div>
+            <div>
+                | <Link to ="/islands/new">New Island </Link>
+                |
+                <Link to="/islands"> My Islands</Link>|
             </div>
         )
     }
