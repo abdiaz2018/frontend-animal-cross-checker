@@ -6,6 +6,15 @@ class IslandForm extends React.Component {
         islandName: "",
     }
 
+    handleFormChange = (e) => {
+        const name = e.target.name
+        const value = e.target.value 
+
+        this.setState({
+            [name]: value,
+        }, () => console.log(this.state))
+    }
+
     render () {
         return (
             <div>
