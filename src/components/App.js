@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "./Header";
 import '../App.css'
 import Island from "./Island";
-import Form from "./Form";
+import IslandForm from "./IslandForm";
 import { 
   BrowserRouter as Router, 
   Switch,
@@ -23,7 +23,7 @@ class App extends Component {
             </Route>
             <Route path="/islands/new">
               <Header />
-              <Form />
+              <IslandForm />
             </Route> 
           </Switch>
         </div>
