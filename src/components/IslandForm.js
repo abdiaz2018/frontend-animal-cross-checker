@@ -25,6 +25,23 @@ class IslandForm extends React.Component {
         }, () => console.log(this.state))
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault()
+        const island = {...this.state}
+        console.log(island)
+
+        const configObj = {
+            method: 'Post',
+            headers: {
+                "Content-Type": "application/json",
+                "Accepts": "application/json"
+            },
+            body: JSON.stringify(island)
+        }
+        fetch("", configObj)
+    }
+
+
     render () {
         return (
             <div>
