@@ -3,6 +3,7 @@ import Header from "./Header";
 import '../App.css'
 import IslandContainter from "./IslandContainter";
 import IslandForm from "./IslandForm";
+import Home from "./Home";
 import { 
   BrowserRouter as Router, 
   Switch,
@@ -17,6 +18,10 @@ class App extends Component {
       <Router>
         <div>
           <Switch>
+            <Route exact path="/">
+              <Header />
+              <Home />
+            </Route>
             <Route exact path="/islands">
               <Header />
               <IslandContainter />
