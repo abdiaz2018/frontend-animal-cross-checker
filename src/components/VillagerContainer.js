@@ -2,13 +2,15 @@ import React from "react";
 
 
 
-function VillagerContainer() {
+class VillagerContainer extends React.Component {
 
-    return(
-        <div>
-            <li></li>
-        </div>
-    )
+    render() {
+        return (
+            <div>
+                {this.displayVillager()}
+            </div>
+        )
+    }
 }
 
 export default VillagerContainer;
