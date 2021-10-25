@@ -1,16 +1,10 @@
 import React from "react";
 
 
+function Island(props) {
 
-class Island extends React.Component {
-
-
-    render () {
-        return (
-            <div className="ui raised segment">
-                <h3>Name:</h3>
-                <h5>Villagers:</h5>
-                
+    return(
+        <div className="ui container segment" id={`island-${props.id}`}>
             </div>
         )
     }
