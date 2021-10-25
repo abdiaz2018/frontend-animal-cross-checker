@@ -3,6 +3,9 @@ import Island from "./Island";
 
 class IslandContainter extends React.Component {
 
+    state = {
+        islands: []
+    }
     render() {
         return (
             <div>
