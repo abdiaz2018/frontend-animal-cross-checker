@@ -8,6 +8,7 @@ class Navbar extends React.Component {
     render () {
         return (
             <div>
+                | <Link to="/">Home</Link>
                 | <Link to ="/islands/new">New Island </Link>
                 |
                 <Link to="/islands"> My Islands</Link>|
