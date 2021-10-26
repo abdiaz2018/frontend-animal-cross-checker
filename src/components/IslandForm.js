@@ -41,18 +41,23 @@ class IslandForm extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        const island = {...this.state}
-        console.log(island)
+        // const island = this.state
+        //const island = {...this.state, fossils: false, glowing_spot: false, able_shop: false, nooks_cranny: false, collect_fruit: false, shake_trees: false}
+        // console.log(island)
 
         const configObj = {
-            method: 'Post',
+            method: 'POST',
             headers: {
                 "Content-Type": "application/json",
                 "Accepts": "application/json"
             },
-            body: JSON.stringify(island)
+            body: JSON.stringify(this.state)
         }
-        fetch("", configObj)
+        fetch("http://localhost:3000/islands", configObj)
+        .then(res => res.json())
+        .then(json => {
+            debugger 
+        })
     }
 
 
