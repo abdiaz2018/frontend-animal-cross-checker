@@ -20,7 +20,12 @@ class VillagerContainer extends React.Component {
     }
 
     displayVillager(){
-        return this.state.villagers.map(villager => <Villager villager={villager} id={villager.id} name={villager.name} talked_to={villager.talked_to}/>)
+        return this.state.villagers.map(villager => <Villager switchVillager={this.switchVillager} villager={villager} id={villager.id} name={villager.name} talked_to={villager.talked_to}/>)
+    }
+
+    switchVillager = (e) => {
+        console.log(e.target.id)
+        console.log(this.state)
     }
 
     render() {
