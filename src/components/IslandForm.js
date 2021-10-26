@@ -83,10 +83,10 @@ class IslandForm extends React.Component {
                     type="text" 
                     name="islandName"
                     placeholder="Island name..."
-                    onChange={this.handleFormChange}
-                    value={this.state.islandName}
+                    onChange={this.handleIslandChange}
                     />
                     {villagers}
+                    {/* <label>First Villager</label>
                     <input 
                     type="text" 
                     name="villager1"
@@ -165,7 +165,7 @@ class IslandForm extends React.Component {
                     placeholder="Villager name..."
                     onChange={this.handleFormChange}
                     value={this.state.villager10}
-                    />
+                    /> */}
                     <input type="submit" />
                 </form>
             </div>
