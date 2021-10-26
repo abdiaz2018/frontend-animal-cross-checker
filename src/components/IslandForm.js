@@ -4,16 +4,19 @@ class IslandForm extends React.Component {
 
     state = {
         islandName: "",
-        villager1: "",
-        villager2: "",
-        villager3: "",
-        villager4: "",
-        villager5: "",
-        villager6: "",
-        villager7: "",
-        villager8: "",
-        villager9: "",
-        villager10: ""
+            villagers: [
+                {villager: "", talked_to: false},
+                {villager: "", talked_to: false},
+                {villager: "", talked_to: false},
+                {villager: "", talked_to: false},
+                {villager: "", talked_to: false},
+                {villager: "", talked_to: false},
+                {villager: "", talked_to: false},
+                {villager: "", talked_to: false},
+                {villager: "", talked_to: false},
+                {villager: "", talked_to: false}
+            ]
+        }
     }
 
     handleFormChange = (e) => {
@@ -67,7 +70,7 @@ class IslandForm extends React.Component {
                     onChange={this.handleFormChange}
                     value={this.state.islandName}
                     />
-                    <label>First Villager</label>
+                    {villagers}
                     <input 
                     type="text" 
                     name="villager1"
