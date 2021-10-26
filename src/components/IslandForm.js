@@ -43,6 +43,19 @@ class IslandForm extends React.Component {
 
 
     render () {
+        const villagers = this.state.villagers.map((villager, index) => {
+            return(
+                <div>
+                    <label>Villager Number {index + 1}</label>
+                    <input 
+                    type="text" 
+                    name="villager"
+                    placeholder="Villager name..."
+                    onChange={this.handleVillagerChange(index)}
+                    />
+                </div>
+            )
+        })
         return (
             <div>
                 <h3>Create your Island below!</h3>
