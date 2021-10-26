@@ -17,6 +17,17 @@ class IslandForm extends React.Component {
                 {villager: "", talked_to: false}
             ]
         }
+
+    handleVillagerChange = (index) => (e) => {
+        // const name = e.target.name
+        // const value = e.target.value 
+
+        // this.setState({
+        //     [name]: value,
+        // }, () => console.log(this.state))
+        let villagers = [...this.state.villagers]
+        villagers[index].villager = e.target.value
+        this.setState({villagers}, () => {console.log(this.state)})
     }
 
     handleFormChange = (e) => {
