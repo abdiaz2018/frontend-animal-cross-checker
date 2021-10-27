@@ -15,3 +15,22 @@ export const fetchIslands = () => {
         })
     }
 }
+
+export const createIsland = (island) => {
+
+    return (dispatch) => {
+        const configObj = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "Accepts": "application/json"
+            },
+            body: JSON.stringify(island)
+        }
+        fetch(url, configObj)
+        .then(res => res.json())
+        .then(json => {
+            dispatch(addIsland(json))
+        })
+    }   
+}
