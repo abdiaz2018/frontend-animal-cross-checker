@@ -1,5 +1,7 @@
 import React from "react";
 import Island from "./Island";
+import {connect} from "react-redux"
+import {fetchIslands} from "../actions/islandActions"
 
 class IslandContainter extends React.Component {
 
@@ -8,23 +10,11 @@ class IslandContainter extends React.Component {
     }
 
     componentDidMount(){
-        // const url = "http://localhost:3000/islands"
-        fetch("http://localhost:3000/islands")
-        .then(res => res.json())
-        .then(json => {
-            this.setState({
-                islands: json
-            })
-        })
+        this.props.fetchIslands()        
     }
 
     displayIslands(){
-        return this.state.islands.map(island => <Island switchCheckbox={this.switchCheckbox} id={island.id} name={island.name} fossils={island.fossils} glowing_spot={island.glowing_spot} nooks_cranny={island.nooks_cranny} able_shop={island.able_shop} shake_trees={island.shake_trees} collect_fruit={island.collect_fruit}/>)
-    }
-    
-    switchCheckbox = (e) => {
-        console.log(e.target.name)
-        
+        return this.props.islands.map(island => <Island switchCheckbox={this.switchCheckbox} id={island.id} name={island.name} fossils={island.fossils} glowing_spot={island.glowing_spot} nooks_cranny={island.nooks_cranny} able_shop={island.able_shop} shake_trees={island.shake_trees} collect_fruit={island.collect_fruit}/>)
     }
     
 
@@ -37,4 +27,16 @@ class IslandContainter extends React.Component {
     }
 }
 
-export default IslandContainter;
+const mapStateToProps = (state) => {
+    return {
+        islands: state.islands 
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchIslands: () => dispatch(fetchIslands())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (IslandContainter);
