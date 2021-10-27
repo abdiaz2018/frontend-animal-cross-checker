@@ -1,4 +1,5 @@
 import React from "react";
+import {connect} from "react-redux"
 
 class IslandForm extends React.Component {
 
@@ -44,20 +45,8 @@ class IslandForm extends React.Component {
         // const island = this.state
         //const island = {...this.state, fossils: false, glowing_spot: false, able_shop: false, nooks_cranny: false, collect_fruit: false, shake_trees: false}
         // console.log(island)
-
-        const configObj = {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-                "Accepts": "application/json"
-            },
-            body: JSON.stringify(this.state)
-        }
-        fetch("http://localhost:3000/islands", configObj)
-        .then(res => res.json())
-        .then(json => {
-            debugger 
-        })
+        const island = {...this.state}
+        this.props.createIsland(island)
     }
 
 
@@ -173,4 +162,4 @@ class IslandForm extends React.Component {
     }
 }
 
-export default IslandForm;
+export default connect(null, {createIsland}) (IslandForm);
