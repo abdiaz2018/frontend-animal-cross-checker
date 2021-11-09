@@ -6,7 +6,7 @@ import Villager from "./Villager";
 class VillagerContainer extends React.Component {
     
     state = {
-        villagers: []
+        villagersData: []
     }
 
     componentDidMount(){
@@ -14,13 +14,13 @@ class VillagerContainer extends React.Component {
         .then(res => res.json())
         .then(json => {
             this.setState({
-                villagers: json
+                villagersData: json
             })
         })
     }
-
+    
     displayVillager(){
-        return this.state.villagers.map(villager => <Villager switchVillager={this.switchVillager} villager={villager} id={villager.id} name={villager.name} talked_to={villager.talked_to}/>)
+        return this.state.villagersData.filter(villager => villager.name !== "").map(villager => <Villager villager={villager} id={villager.id} name={villager.name} />)
     }
 
     render() {

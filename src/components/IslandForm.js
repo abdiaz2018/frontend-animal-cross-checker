@@ -46,8 +46,13 @@ class IslandForm extends React.Component {
         // const island = this.state
         //const island = {...this.state, fossils: false, glowing_spot: false, able_shop: false, nooks_cranny: false, collect_fruit: false, shake_trees: false}
         // console.log(island)
+        // const letters = /^[a-zA-Z0-9]*$/
         const island = {...this.state}
+        // island.villagers.filter(villager => villager.villager === letters).map(filteredVillager => <div>{filteredVillager.villager}</div>)
+        // console.log(island.villagers)
         this.props.createIsland(island)
+        // this.setState({villager: island})
+        window.location.replace('http://localhost:3001/islands')
     }
 
 
